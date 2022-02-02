@@ -1,0 +1,28 @@
+header {
+  margin-bottom: 40px;
+}
+
+.page-heading a {
+  margin-bottom: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: purple;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  margin: 6px 0;
+}
+
+.nav-list-item {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 25px;
+  display: block;
+
+  &.active-list-item,
+  &:hover {
+    color: coral;
+  }
+}

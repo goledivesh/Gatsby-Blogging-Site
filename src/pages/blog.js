@@ -51,6 +51,7 @@ const BlogPage = () => {
     <Layout pageTitle="Blog" pageSubTitle="Blog Page">
       <div>
         {data.allContentfulBlogPost.edges.map(edge => {
+          // console.log(edge)
           return (
             <Article key={edge.node.id}>
               <PostTitle>{edge.node.title}</PostTitle>

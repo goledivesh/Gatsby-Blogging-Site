@@ -5,7 +5,15 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
+// import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+// import { renderRichText } from "gatsby-source-contentful/rich-text"
+
+// https://github.com/contentful/rich-text/tree/master/packages/rich-text-react-renderer
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 import Layout from "../components/layout"
+
+
 
 const BlogPublishedDate = styled.h4`
   font-weight: 500;
@@ -24,8 +32,9 @@ export const query = graphql`
     }
   }
 `
-
 const Blog = props => {
+  const bodyData = JSON.parse(props.data.contentfulBlogPost.body.raw);
+  console.log(bodyData);
   return (
     <Layout pageTitle={props.data.contentfulBlogPost.title}>
       <Link to="/blog">
@@ -36,11 +45,13 @@ const Blog = props => {
         {props.data.contentfulBlogPost.publishedDate}
       </BlogPublishedDate>
 
-      <div
+      { documentToReactComponents(bodyData) }
+
+      {/* <div
         dangerouslySetInnerHTML={{
-          __html: props.data.contentfulBlogPost.body,
+          __html: documentToReactComponents(bodyData)
         }}
-      ></div>
+      ></div> */}
     </Layout>
   )
 }

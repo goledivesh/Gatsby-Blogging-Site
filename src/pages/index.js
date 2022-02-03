@@ -7,7 +7,7 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Home" pageSubTitle="Home Page">
       <p>
-        Ad amet incididunt est laborum fugiat. Exercitation incididunt Lorem
+        Home page - Ad amet incididunt est laborum fugiat. Exercitation incididunt Lorem
         aute anim adipisicing exercitation qui elit do occaecat. Ut et non duis
         minim ea duis incididunt. Lorem irure do consequat qui proident officia
         dolore eu.

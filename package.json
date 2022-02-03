@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "env-cmd .env gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
@@ -37,6 +37,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "prettier": "^2.5.1"
   },
   "repository": {

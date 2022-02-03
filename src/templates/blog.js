@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
@@ -36,11 +36,11 @@ const Blog = props => {
         {props.data.contentfulBlogPost.publishedDate}
       </BlogPublishedDate>
 
-      <div
-        dangerouslySetInnerHTML={{
-          __html: props.data.contentfulBlogPost.body,
-        }}
-      ></div>
+      <div>
+        {documentToReactComponents(
+          JSON.parse(props.data.contentfulBlogPost.body.raw)
+        )}
+      </div>
     </Layout>
   )
 }
